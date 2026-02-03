@@ -1,0 +1,88 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  /* color: rgba(255, 255, 255, 0.87); */
+  background-color: #949494;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem;
+  height: 64px; /* adjust as needed */
+  background: rgb(37, 141, 211);
+}
+
+/* left and right containers inside the navbar */
+/* .navbar .nav-left,
+.navbar .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1 1 auto;
+}
+
+/* ensure right group aligns to the end */
+.navbar .nav-right {
+  justify-content: flex-end;
+} */
+
+/* centered logo element — place this markup as a direct child of .navbar */
+.navbar .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 48px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: inherit;
+}
+
+/* small responsive tweak */
+/* @media (max-width: 600px) {
+  .navbar {
+    padding: 0 0.5rem;
+  }
+  .navbar .logo {
+    height: 40px;
+    font-size: 1rem;
+  }
+} */
+
+.sidebar {
+  width: 250px;
+  height: 600px;
+  background-color: #1e1e1e;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.footer {
+  height: 60px;
+  background-color: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: blue;
+}
+.home-page {
+  flex: 1;
+  padding: 1rem;
+  background-color: #f5f5f5;
+}
