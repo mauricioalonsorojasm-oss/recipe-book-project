@@ -45,10 +45,10 @@
   transform: translateX(-50%);
   pointer-events: auto;
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 0.5rem;
-  height: 48px;
-  font-weight: 600;
+  height: 90px;
+  font-weight: 120;
   font-size: 1.1rem;
   color: inherit;
 }
