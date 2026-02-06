@@ -2,12 +2,11 @@ import { useState } from 'react'
 import recipes from "../assets/recipe.json"
 import RecipeItem from './RecipeItem'
 
-export default function RecipeList() {
-    // const [recipeslist, Setrecipeslist] = useState([])
+export default function RecipeList({allRecipes}) {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
         {
-        recipes.map(({id,name,calories,image,servings}) => {
+        allRecipes.map(({id,name,calories,image,servings}) => {
 
             return (
                 <div key={id}>
