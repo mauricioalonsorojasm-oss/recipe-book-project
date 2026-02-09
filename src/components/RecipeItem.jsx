@@ -1,24 +1,13 @@
 
 
-// export default function RecipeItem(props) {
-//   return (
-
-//       <div>
-//         <p>recipe : {props.name}</p>
-//         <p>calories :{props.calories}</p>
-//         <img style={{ width: "100px" }} src={props.image} alt="" />
-//         <p>servings :{props.servings}</p>
-//         <h5>
-//             {
-//                 props.calories < 400 ? "low calories" : "high calories"
-//             }
-//         </h5>
-//       </div>
-
-//   );
-// }
-
 export default function RecipeItem(props) {
+  const [recipeElement, SetRecipeElement] = useState (allRecipes)
+      let clone = [...recipeElement]
+      function deleting(i) {
+          clone.splice (i,1)
+          SetRecipeElement(clone)
+      }
+  
   return (
     <div className="recipe-card">
       <img
@@ -48,6 +37,7 @@ export default function RecipeItem(props) {
       >
         {props.calories < 400 ? "low calories" : "high calories"}
       </h5>
+      <button onClick={deleting}> delete   </button>
     </div>
   );
 }

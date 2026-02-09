@@ -19,10 +19,8 @@ function App() {
       <div style={{display:'flex'}}>
         <Sidebar/>
 
-        {/* <Link to= "/">homepage</Link>
-        <Link to= "/About">About</Link>
-        <Link to= "/DetailPage">DetailPage</Link> */}
         
+      
 
         <Routes>
           <Route path = "/" element={<Homepage/>}/>
