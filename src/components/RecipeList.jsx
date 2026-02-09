@@ -1,9 +1,11 @@
 import { useState } from "react";
 import recipes from "../assets/recipe.json";
 import RecipeItem from "./RecipeItem";
+import { Link } from "react-router";
 
 export default function RecipeList({ allRecipes }) {
     const [recipeElement, SetRecipeElement] = useState (allRecipes)
+    // console.log(allRecipes)
     
     function deleting(i) {
         let clone = [...recipeElement];
@@ -17,14 +19,16 @@ export default function RecipeList({ allRecipes }) {
       {recipeElement.map(({ id, name, calories, image, servings },i) => {
         return (
           <div key={id}>
-            <RecipeItem
-              name={name}
-              calories={calories}
-              image={image}
-              servings={servings}
-              deleting={deleting}
-              i={i}
-            />
+            <Link to={`/DetailPage/${id}`}>
+                <RecipeItem
+                    name={name}
+                    calories={calories}
+                    image={image}
+                    servings={servings}
+                    deleting={deleting}
+                    i={i}
+                    />
+            </Link>
           </div>
         );
       })}

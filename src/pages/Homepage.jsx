@@ -3,6 +3,7 @@ import RecipeList from '../components/RecipeList'
 import CreateRecipe from '../components/CreateRecipe'
 import recipes from "../assets/recipe.json"
 import { useState } from 'react'
+import DetailPage from './DetailPage'
 
 export default function Homepage() {
 
