@@ -4,15 +4,17 @@ import RecipeItem from "./RecipeItem";
 
 export default function RecipeList({ allRecipes }) {
     const [recipeElement, SetRecipeElement] = useState (allRecipes)
-    let clone = [...recipeElement]
+    
     function deleting(i) {
-        clone.splice (i,1)
-        SetRecipeElement(clone)
+        let clone = [...recipeElement];
+        clone.splice (i,1);
+        SetRecipeElement(clone);
     }
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {allRecipes.map(({ id, name, calories, image, servings }) => {
+        {/* {console.log(allRecipes)} */}
+      {recipeElement.map(({ id, name, calories, image, servings },i) => {
         return (
           <div key={id}>
             <RecipeItem
@@ -20,6 +22,8 @@ export default function RecipeList({ allRecipes }) {
               calories={calories}
               image={image}
               servings={servings}
+              deleting={deleting}
+              i={i}
             />
           </div>
         );
