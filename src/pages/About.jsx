@@ -48,7 +48,7 @@ export default function About() {
           </a>
 
           <a
-            href="#"
+            href="https://www.linkedin.com/in/elahehashemi/"
             target="_blank"
             rel="noopener noreferrer"
             className="about-link"

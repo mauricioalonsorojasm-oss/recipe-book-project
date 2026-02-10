@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import recipes from "../assets/recipe.json"
+import noImage from "../assets/noimage.png";
+
 
 export default function CreateRecipe({allRecipes, setAllRecipes}) {
     const[name,SetName] = useState("")
@@ -28,8 +30,11 @@ export default function CreateRecipe({allRecipes, setAllRecipes}) {
             name : name,
             calories :calories,
             serving:serving,
-            image:image
+            image:image || noImage
         }
+
+        // image?"":"/assets/noimage.png"
+
         let clone = [...allRecipes]
         clone.push(NewRecipe)
         setAllRecipes(clone)
