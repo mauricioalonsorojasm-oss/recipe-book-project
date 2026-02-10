@@ -24,6 +24,7 @@ export default function CreateRecipe({allRecipes, setAllRecipes}) {
     const handleSubmit = (event) => {
         event.preventDefault()
         const NewRecipe = {
+            id: `${Math.random()*100000000000}`,
             name : name,
             calories :calories,
             serving:serving,

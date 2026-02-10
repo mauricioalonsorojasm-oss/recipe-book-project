@@ -9,9 +9,12 @@ import { Link, Route, Routes } from "react-router-dom";
 import DetailPage from './pages/DetailPage'
 import NotFound from './pages/error/NotFoundPage'
 import About from './pages/About'
+import { useState } from 'react'
+import recipes from './assets/recipe.json'
+import Edit from './pages/Edit'
 
 function App() {
-  
+  const [allRecipes, setAllRecipes] = useState(recipes);
 
   return (
     <>
@@ -23,10 +26,11 @@ function App() {
       
 
         <Routes>
-          <Route path = "/" element={<Homepage/>}/>
+          <Route path = "/" element={<Homepage allRecipes={allRecipes} setAllRecipes={setAllRecipes}/>}/>
           <Route path = "/About" element={<About/>}/>
-          <Route path = "/DetailPage/:recipeID" element={<DetailPage />}/>
+          <Route path = "/DetailPage/:recipeID" element={<DetailPage allRecipes={allRecipes}/>}/>
           <Route path = "*" element={<NotFound/>}/>
+          <Route path = "/DetailPage/:recipeID/edit" element={<Edit allRecipes={allRecipes} setAllRecipes={setAllRecipes}/>}/>
         </Routes>
         
 

@@ -3,20 +3,20 @@ import recipes from "../assets/recipe.json";
 import RecipeItem from "./RecipeItem";
 import { Link } from "react-router";
 
-export default function RecipeList({ allRecipes }) {
-    const [recipeElement, SetRecipeElement] = useState (allRecipes)
+export default function RecipeList({ allRecipes ,setAllRecipes}) {
+
     // console.log(allRecipes)
     
     function deleting(i) {
-        let clone = [...recipeElement];
+        let clone = [...allRecipes];
         clone.splice (i,1);
-        SetRecipeElement(clone);
+        setAllRecipes(clone);
     }
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
         {/* {console.log(allRecipes)} */}
-      {recipeElement.map(({ id, name, calories, image, servings },i) => {
+      {allRecipes.map(({ id, name, calories, image, servings },i) => {
         return (
           <div key={id}>
             
