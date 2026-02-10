@@ -1,10 +1,14 @@
+import { Link } from "react-router";
+
 export default function RecipeItem(props) {
   return (
     <div className="recipe-card">
       
       <img className="recipe-image" src={props.image} alt={props.name} />
 
-      <p className="recipe-name">recipe: {props.name}</p>
+      <Link to={`/DetailPage/${props.id}`}>
+        <p className="recipe-name">recipe: {props.name}</p>
+      </Link>
 
       <p className="recipe-calories">calories: {props.calories}</p>
 

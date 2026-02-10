@@ -19,7 +19,7 @@ export default function RecipeList({ allRecipes }) {
       {recipeElement.map(({ id, name, calories, image, servings },i) => {
         return (
           <div key={id}>
-            <Link to={`/DetailPage/${id}`}>
+            
                 <RecipeItem
                     name={name}
                     calories={calories}
@@ -27,8 +27,9 @@ export default function RecipeList({ allRecipes }) {
                     servings={servings}
                     deleting={deleting}
                     i={i}
+                    id={id}
                     />
-            </Link>
+            
           </div>
         );
       })}
