@@ -37,14 +37,14 @@ export default function CreateRecipe({allRecipes, setAllRecipes}) {
     }
     
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <input type="url" placeholder="Image URL" onChange={handleImage} value={image} />
-            <input type="text" onChange={handleName} value={name}/>
-            <input type="number" onChange={handleCalories} value={calories}/>
-            <input type="number" onChange={handleServing} value={serving}/>
-            <button type='submit'>submit</button>
-        </form>
+    <div className="create-wrap">
+      <form className="create-form" onSubmit={handleSubmit}>
+        <input type="url" placeholder="Image URL" onChange={handleImage} value={image} />
+        <input type="text" placeholder="Recipe name" onChange={handleName} value={name} />
+        <input type="number" placeholder="Calories" onChange={handleCalories} value={calories} />
+        <input type="number" placeholder="Servings" onChange={handleServing} value={serving} />
+        <button className="btn btn-primary" type="submit">Add</button>
+      </form>
     </div>
   )
 }

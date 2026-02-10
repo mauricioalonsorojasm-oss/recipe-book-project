@@ -1,27 +1,35 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
-export default function RecipeItem(props) {
+export default function RecipeItem({ id, name, calories, servings, image, deleting, i }) {
+  const isLow = Number(calories) < 400;
+
   return (
-    <div className="recipe-card">
-      
-      <img className="recipe-image" src={props.image} alt={props.name} />
+    <article className="recipe-card">
+      <div className="recipe-media">
+        <img className="recipe-image" src={image} alt={name} />
 
-      <Link to={`/DetailPage/${props.id}`}>
-        <p className="recipe-name">{props.name}</p>
-      </Link>
+        {/* optional badge on image */}
+        <span className={`pill ${isLow ? "low" : "high"}`}>
+          {isLow ? "Low calories" : "High calories"}
+        </span>
+      </div>
 
-      <p className="recipe-calories">calories: {props.calories}</p>
+      <div className="recipe-body">
+        <Link className="recipe-link" to={`/DetailPage/${id}`}>
+          <h3 className="recipe-name">{name}</h3>
+        </Link>
 
-      <p className="recipe-servings">servings: {props.servings}</p>
+        <div className="meta">
+          <span>🔥 {calories} cal</span>
+          <span>🍽️ {servings} servings</span>
+        </div>
 
-      <h5
-        className={
-          props.calories < 400 ? "calorie-tag low" : "calorie-tag high"
-        }
-      >
-        {props.calories < 400 ? "low calories" : "high calories"}
-      </h5>
-      <button onClick={() => props.deleting(props.i)}> delete </button>
-    </div>
+        <div className="card-actions">
+          <button className="btn btn-ghost" onClick={() => deleting(i)}>
+            Delete
+          </button>
+        </div>
+      </div>
+    </article>
   );
 }

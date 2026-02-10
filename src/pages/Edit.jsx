@@ -49,14 +49,71 @@ export default function Edit({allRecipes,setAllRecipes}) {
       }
       
     return (
-      <div>
-          <form onSubmit={handleSubmit}>
-              <input type="url" placeholder="Image URL" onChange={handleImage} value={image} />
-              <input type="text" onChange={handleName} value={name}/>
-              <input type="number" onChange={handleCalories} value={calories}/>
-              <input type="number" onChange={handleServing} value={serving}/>
-              <button type='submit'>submit</button>
-          </form>
+      <div className="edit-page">
+      <div className="edit-card">
+        <h1 className="edit-title">Edit recipe</h1>
+        <p className="edit-subtitle">Update the recipe details and save your changes.</p>
+
+        <form className="edit-form" onSubmit={handleSubmit}>
+          <label className="field">
+            <span>Image URL</span>
+            <input
+              type="url"
+              placeholder="https://..."
+              onChange={handleImage}
+              value={image}
+            />
+          </label>
+
+          <label className="field">
+            <span>Recipe name</span>
+            <input
+              type="text"
+              placeholder="Recipe name"
+              onChange={handleName}
+              value={name}
+            />
+          </label>
+
+          <div className="edit-row">
+            <label className="field">
+              <span>Calories</span>
+              <input
+                type="number"
+                placeholder="0"
+                onChange={handleCalories}
+                value={calories}
+              />
+            </label>
+
+            <label className="field">
+              <span>Servings</span>
+              <input
+                type="number"
+                placeholder="0"
+                onChange={handleServing}
+                value={serving}
+              />
+            </label>
+          </div>
+
+          <div className="edit-actions">
+            <button className="btn btn-primary" type="submit">
+              Save changes
+            </button>
+
+            <button
+              className="btn btn-ghost"
+              type="button"
+              onClick={() => navigate(-1)}
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
       </div>
-    )
+    </div>
+  );
 }
+    
+

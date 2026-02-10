@@ -5,7 +5,7 @@ export default function Sidebar() {
   return (
     <div className='sidebar'>
         <br/>
-        <Link to="">homepage</Link>
+        <Link to="">Homepage</Link>
         <br/>
         <Link to="/About">About</Link>
         <br/>

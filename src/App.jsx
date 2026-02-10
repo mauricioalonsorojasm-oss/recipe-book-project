@@ -17,29 +17,28 @@ function App() {
   const [allRecipes, setAllRecipes] = useState(recipes);
 
   return (
-    <>
-      <NavBar/>
-      <div style={{display:'flex'}}>
-        <Sidebar/>
+    <div className="app">
+      <NavBar />
 
-        
-      
+      <div className="layout">
+        <aside className="sidebar-wrap">
+          <Sidebar />
+        </aside>
 
-        <Routes>
-          <Route path = "/" element={<Homepage allRecipes={allRecipes} setAllRecipes={setAllRecipes}/>}/>
-          <Route path = "/About" element={<About/>}/>
-          <Route path = "/DetailPage/:recipeID" element={<DetailPage allRecipes={allRecipes}/>}/>
-          <Route path = "*" element={<NotFound/>}/>
-          <Route path = "/DetailPage/:recipeID/edit" element={<Edit allRecipes={allRecipes} setAllRecipes={setAllRecipes}/>}/>
-        </Routes>
-        
-
-
-
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<Homepage allRecipes={allRecipes} setAllRecipes={setAllRecipes} />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/DetailPage/:recipeID" element={<DetailPage allRecipes={allRecipes} />} />
+            <Route path="/DetailPage/:recipeID/edit" element={<Edit allRecipes={allRecipes} setAllRecipes={setAllRecipes} />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
       </div>
-      <Footer/>
-    </>
-  )
+
+      <Footer />
+    </div>
+  );
 }
 
 export default App
