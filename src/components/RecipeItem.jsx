@@ -7,7 +7,7 @@ export default function RecipeItem(props) {
       <img className="recipe-image" src={props.image} alt={props.name} />
 
       <Link to={`/DetailPage/${props.id}`}>
-        <p className="recipe-name">recipe: {props.name}</p>
+        <p className="recipe-name">{props.name}</p>
       </Link>
 
       <p className="recipe-calories">calories: {props.calories}</p>

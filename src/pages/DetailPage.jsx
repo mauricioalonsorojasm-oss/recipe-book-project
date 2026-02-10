@@ -17,10 +17,10 @@ export default function DetailPage({allRecipes}) {
   return (
     <div>
     <div >
-      <h1>recipe</h1>
+      <img src={recipeDetail.image} style={{width : "100px"}}></img>
       <h2>{recipeDetail.name}</h2>
-      <p>{recipeDetail.calories}</p>
-      <p>{recipeDetail.serving}</p>
+      <p>calories: {recipeDetail.calories}</p>
+      <p>serving: {recipeDetail.servings}</p>
       <button onClick={() => navToEdit("./edit")}>edit</button>
     </div>
         

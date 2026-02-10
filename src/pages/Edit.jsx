@@ -11,7 +11,7 @@ export default function Edit({allRecipes,setAllRecipes}) {
       const[name,SetName] = useState(recipeDetail.name)
       const [calories, SetCalories] = useState(recipeDetail.calories)
       const [serving, SetServing] = useState(recipeDetail.serving)
-      const [image,SetImage] = useState("")
+      const [image,SetImage] = useState(recipeDetail.image)
   
   
       const handleName = (event) => {
