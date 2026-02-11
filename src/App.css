@@ -1,7 +1,4 @@
-/* App.css
-   Keep this file minimal so it does NOT override the global layout/theme in index.css.
-   (The old Vite template styles were breaking the grid and centering everything.)
-*/
+
 
 #root {
   width: 100%;

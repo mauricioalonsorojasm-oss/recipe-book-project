@@ -9,7 +9,7 @@ export default function Sidebar() {
         <br/>
         <Link to="/About">About</Link>
         <br/>
-        {/* <Link to="/DetailPage/b777a69a-7f1c-41e8-8a4c-1d0e9e4cace8">DetailPage</Link> */}
+        
 
     </div>
   )
