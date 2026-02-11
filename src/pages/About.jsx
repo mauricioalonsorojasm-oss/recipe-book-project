@@ -36,6 +36,14 @@ export default function About() {
           >
             GitHub Repository
           </a>
+          <a
+            href="https://www.linkedin.com/in/elahehashemi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="about-link"
+          >
+            Elahe Hashemi · LinkedIn
+          </a>
 
       
           <a
@@ -47,14 +55,7 @@ export default function About() {
             Mauricio Rojas · LinkedIn
           </a>
 
-          <a
-            href="https://www.linkedin.com/in/elahehashemi/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="about-link"
-          >
-            Elahe Hashemi · LinkedIn
-          </a>
+          
         </div>
       </div>
     </div>
